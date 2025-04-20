@@ -1,0 +1,54 @@
+.playlist {
+  scroll-snap-align: center;
+  background-color: #1e1e1e; /* ajusta aquí al color que prefieras */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  min-width: 80%;
+  max-width: 300px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.29s ease, scale 0.15s ease;
+  transform: scale(0.9);
+}
+
+
+const container = document.getElementById('playlistContainer');
+const playlists = container.querySelectorAll('.playlist');
+
+// Cargar y centrar la segunda tarjeta al inicio
+window.addEventListener('load', () => {
+  playlists[1].scrollIntoView({ behavior: 'instant', inline: 'center' });
+
+  // Marcar como activa la segunda
+  playlists.forEach(pl => pl.classList.remove('active'));
+  playlists[1].classList.add('active');
+});
+
+// Detectar scroll y centrar automáticamente la más cercana
+container.addEventListener('scroll', () => {
+  clearTimeout(container.scrollTimeout);
+  container.scrollTimeout = setTimeout(() => {
+    let center = container.scrollLeft + container.offsetWidth / 2;
+    let closest = null;
+    let closestDist = Infinity;
+
+    playlists.forEach(pl => {
+      let boxCenter = pl.offsetLeft + pl.offsetWidth / 2;
+      let dist = Math.abs(boxCenter - center);
+      if (dist < closestDist) {
+        closest = pl;
+        closestDist = dist;
+      }
+    });
+
+    if (closest) {
+      // Centrar la más cercana
+      closest.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+
+      // Quitar clase activa a todas y agregar solo a la del centro
+      playlists.forEach(pl => pl.classList.remove('active'));
+      closest.classList.add('active');
+    }
+  }, 100);
+});

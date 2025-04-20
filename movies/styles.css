@@ -1,0 +1,130 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Fondo con imagen personalizable */
+  background: url('https://res.cloudinary.com/dlxii2hkq/image/upload/f_auto,q_auto/v1745102520/3016d8c7571529fde5d35d1ce8e8aacb_vdn0yf.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+#categoryTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Menú hamburguesa con transición */
+.menu {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.menu.hidden {
+  display: none;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.menu li:hover {
+  background-color: #333;
+}
+
+/* Optimización de la cuadrícula de películas */
+.movie-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  transition: padding 0.3s ease;
+}
+
+/* Animación de entrada para las películas */
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.movie-card .info {
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.movie-card .rating {
+  color: #ffc107;
+  font-size: 14px;
+}

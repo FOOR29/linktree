@@ -1,0 +1,84 @@
+.card {
+  position: relative;
+  height: 75vh; /* más corta pa móviles */
+  margin: 5vh auto;
+  width: 90%;
+  border-radius: 30px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+
+const categories = {
+  best: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" },
+    { title: "En busca de la felicidad", rating: "9.1/10", img: "img/en-busca-de-la-felicidad.jpg" },
+    { title: "Avengers: Endgame", rating: "8.8/10", img: "img/avengers-endgame.jpg" },
+    { title: "Transformers: Dark of the Moon", rating: "8.0/10", img: "img/transformers-dark-of-the-moon.jpg" },
+    { title: "Avatar: La forma del agua", rating: "8.3/10", img: "img/avatar-la-forma-del-agua.jpg" },
+    { title: "The Batman", rating: "8.6/10", img: "img/the-batman.jpg" },
+    { title: "Spider-Man 2", rating: "9.0/10", img: "img/spider-man-2.jpg" },
+    { title: "Fragmentado", rating: "8.4/10", img: "img/fragmentado.jpg" }
+  ],
+  animadas: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ],
+  terror: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ],
+  scifi: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ],
+  anime: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ]
+};
+
+
+/*  terror: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ],
+  scifi: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ],
+  anime: [
+    { title: "Forrest Gump", rating: "9/10", img: "/movies/portadas/prueba.jpg" },
+    { title: "The Notebook", rating: "8.5/10", img: "/movies/portadas/prueba 2.jpg" },
+    { title: "Interstellar", rating: "9.2/10", img: "img/interstellar.jpg" },
+    { title: "Good Will Hunting", rating: "8.9/10", img: "img/good-will-hunting.jpg" },
+    { title: "Blade Runner 2049", rating: "8.7/10", img: "img/blade-runner-2049.jpg" }
+  ] */

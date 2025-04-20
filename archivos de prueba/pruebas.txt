@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Forlan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    video#background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .username {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .phrase {
+      font-size: 1rem;
+      font-style: italic;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .link {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .link img {
+      width: 32px;
+      height: 32px;
+      margin-right: 15px;
+    }
+
+    @media (min-width: 600px) {
+      body {
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="background-video" playsinline>
+    <source src="/perfil/videos/backgraund video.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <img src="/perfil/imagenes/perfil.jpg" alt="Foto de perfil" class="avatar">
+    <div class="username">Forlán</div>
+    <div class="phrase">Disciplina en el cuerpo, diseño en la mente, música en el alma.</div>
+    
+    <a href="#" class="link">
+      <img src="/perfil/imagenes/links png/Github.png" alt="GitHub">
+      <span>GitHub</span>
+    </a>
+
+    <a href="#" class="link">
+      <img src="/perfil/imagenes/links png/ytmusic.png" alt="YouTube Music">
+      <span>YouTube Music</span>
+    </a>
+
+    <a href="#" class="link">
+      <img src="/perfil/imagenes/links png/tiktok.png" alt="TikTok">
+      <span>TikTok</span>
+    </a>
+
+    <a href="#" class="link">
+      <img src="/perfil/imagenes/links png/películas.png" alt="Películas">
+      <span>Películas favoritas</span>
+    </a>
+  </div>
+
+  <!-- JavaScript para evitar que el video se pause -->
+  <script>
+    const video = document.getElementById('background-video');
+
+    // Forzamos a reproducir el video si por alguna razón se detiene
+    video.addEventListener('pause', () => {
+      video.play().catch(() => {}); // Por si hay restricciones del navegador
+    });
+
+    // Intenta mantener el video andando
+    setInterval(() => {
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    }, 5000); // cada 5 segundos
+  </script>
+</body>
+</html>
