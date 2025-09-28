@@ -108,6 +108,12 @@ video#background-video {
   margin-right: 15px;
 }
 
+.link svg {
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+}
+
 @media (min-width: 600px) {
   body {
     padding: 40px;
